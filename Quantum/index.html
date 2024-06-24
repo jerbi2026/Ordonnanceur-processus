@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Round Robin Scheduling</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/x-icon" href="../images/logo.ico">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>Round Robin</h1>
+
+  <section id="forms">
+    <label class="form-label" for="quantum">Quantum</label>
+      <div class="input-group mb-3">
+        
+        <input class="form-control border border-warning-subtle" type="number" id="quantum">
+        <button class="btn btn-outline-warning" type="button" id="button-addon2" onclick="valider()">Valider</button>
+      </div>
+      
+        
+
+        <label class="form-label" for="processInput">Enter process arrival time:</label>
+        <input class="form-control border border-warning-subtle" type="number" id="processInput">
+
+        <label class="form-label" for="te">Execution Time:</label>
+        <input class="form-control border border-warning-subtle" type="number" id="te">
+
+        <button type="button" class="btn btn-warning" onclick="addProcess()">Add Process</button>
+        <button type="button" class="btn btn-warning" onclick="runSJF()">Run Round Robin Scheduling</button>
+        <p>
+          <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+            For more Informations💡
+          </button>
+        </p>
+        <div style="min-height: 120px;">
+          <div class="collapse collapse-horizontal" id="collapseWidthExample">
+            <div id="infor" class="card card-body">
+              +Chaque processus s’exécute au maximum pendant une tranche de temps fixe (quantum) <br>
++La ressource est allouée à l’entité en tête de la file, pour une durée d’au maximum un quantum.<br>
++À la fin du quantum,<br>
+*Soit, le processus est interrompu et replacé à la fin de la file s’il a encore un temps restant d’exécution<br>
+*Soit, Le processus part vers l’état attente pour traitement (en veille) ou l’état terminé<br>
+            </div>
+          </div>
+        </div>
+  </section>
+  <section>
+    <table class="table table-striped">
+        <thead class="thead-danger">
+            <tr>
+            <th>Process</th>
+            <th>Arrival Time</th>
+            <th>Execution Time</th>
+            </tr>
+        </thead>
+        <tbody id="processes">
+        </tbody>
+    </table>
+  </section>
+
+  <section id="chart">
+    <div id="chart-container"></div>
+  </section>
+  
+  <section id="table_exec" style="display: none;">
+    <table class="table table-striped" >
+        <thead class="thead-danger">
+            <tr>
+              <th>Time</th>
+              <th>Process</th>
+            </tr>
+        </thead>
+        <tbody id="processes2">
+        </tbody>
+    </table>
+  </section>
+  <script src="script.js"></script>
+
+</body>
+</html>

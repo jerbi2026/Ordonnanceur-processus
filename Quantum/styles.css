@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+   padding: 5%;
+}
+h1{
+    text-align: center;
+    background: url("https://img.freepik.com/free-vector/stripe-shape-wall-background_1409-1833.jpg");
+    background-size: 110% auto;
+    background-position: center;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: background 20s linear infinite;
+    font-size: 500%;
+    font-weight: bolder;
+    
+}
+@keyframes background {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 2000px 0;
+    }
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#chart-container {
+    margin-top: 20px;
+    width: 100%;
+    height: 100%;
+}
+.btn-warning{
+    margin: 10px;
+}
+
+
+
+#chart{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+#infor{
+    width: 900px;
+}
+@media screen and (max-width: 768px) {
+   #infor {
+    width: 300px;
+   }
+    
+}
